@@ -1,6 +1,8 @@
 # Dashboard Autentikasi
 Dokumentasi API Dashboard Autentikasi.
 
+Deploy server to heroku : https://modul-autentikasi.herokuapp.com/
+
 ### create .env and input environment variabeles
 
 ```PORT = 
@@ -53,13 +55,15 @@ Access server port: 3000
   - **URL Params**
   
   - Require : `none`
-    - Optional : `none`
-
+    
+- Optional : `none`
+    
   - **Data Params**
   
   - Require : `name:string` , `email:string` , `password:string`
-    - Optional : `numberSecret:string`
-
+  
+  - Optional : `numberSecret:string`
+  
   - **Headers**
 
     - application/x-www-form-urlencoded
@@ -71,7 +75,7 @@ Access server port: 3000
   - **Success Response**
 
     - Code : 201 CREATED
-
+  
     - Content :
   
       ```
@@ -86,7 +90,7 @@ Access server port: 3000
               "numberSecret": "$2b$08$PZ.QIk/Y7puspzml/vqc..YJbrZUQJJCRt2nnDIxHFN4V.d4g9Yw6"
           },
           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTg1NzAyMTc2fQ.EmJxH7Riw2l6QyoR0XSHeyKgqiR5BDxIVHSFSdV-zQo"
-    }
+  }
       ```
 
   - **Error Response**
@@ -94,89 +98,89 @@ Access server port: 3000
     - Validation name
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "Please fill name"
+    "Please fill name"
         ```
 
         - Code : 400 Bad Request
-
+  
         - Content :
   
           ```
-        "please enter your name"
+      "please enter your name"
           ```
 
     - Validation password
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "Please fill password"
+    "Please fill password"
         ```
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "Please enter your password"
+    "Please enter your password"
         ```
 
     - Validation Email
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "Please fill email"
+    "Please fill email"
         ```
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "Please enter your email"
+    "Please enter your email"
         ```
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "format email wrong"
+    "format email wrong"
         ```
 
     - Validation Unique Email
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "email already exist"
+    "email already exist"
         ```
 
     - Validation Unique username
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
-      "username already exist"
+    "username already exist"
         ```
 
     - Validation min length password
 
       - Code : 400 Bad Request
-
+  
       - Content :
   
         ```
