@@ -169,14 +169,14 @@ Access server port: 3000
       "email already exist"
         ```
 
-    - Validation Unique username
+    - Validation Unique name
 
       - Code : 400 Bad Request
 
       - Content :
   
         ```
-      "username already exist"
+      "name already exist"
         ```
 
     - Validation min length password
