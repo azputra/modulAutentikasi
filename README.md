@@ -36,32 +36,32 @@ Access server port: 3000
 
 - ## USER ROUTES
 
-  | Routing                 | HTTP | Header(s)                         | Body                                                         | Response                                                     | Description                                  |
-  | ----------------------- | ---- | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------- |
+- | Routing                 | HTTP | Header(s)                         | Body                                                         | Response                                                     | Description                                  |
+| ----------------------- | ---- | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------- |
   | /users/register         | POST | application/x-www-form-urlencoded | name : String (***required***), email : String (***required***), password : String (***required***), numberSecret : String | Error: Internal server error Success: add new user           | Create new user                              |
   | /users/login            | POST | application/x-www-form-urlencoded | email : String (***required***), password : String (***required***) | Error: Internal server error Success: login user             | normal user login                            |
   | /users/send2FA/:userId  | GET  | application/x-www-form-urlencoded | none                                                         | Error: Internal server error Success: message success        | send email to user email                     |
-| /users/check2FA/:userId | GET  | application/x-www-form-urlencoded | numberSecret : String(***required***)                        | Error: Internal server error Success: message success check  | check the number you input                   |
+  | /users/check2FA/:userId | GET  | application/x-www-form-urlencoded | numberSecret : String(***required***)                        | Error: Internal server error Success: message success check  | check the number you input                   |
   | /users/resetPassword    | PUT  | token                             | oldPassword : String (***required***), newPassword : String (***required***), checkNewPassword : String (***required***) | Error: Internal server error Success: message success reset password | reset your old password to your new password |
 
   ## USER REGISTER
 
   - **URL's**
-  
+
     ```
   /users/register
     ```
-
-  - **URL Params**
   
+  - **URL Params**
+
   - Require : `none`
     
-- Optional : `none`
+  - Optional : `none`
     
-  - **Data Params**
+- **Data Params**
   
   - Require : `name:string` , `email:string` , `password:string`
-  
+    
   - Optional : `numberSecret:string`
   
   - **Headers**
@@ -75,7 +75,7 @@ Access server port: 3000
   - **Success Response**
 
     - Code : 201 CREATED
-  
+
     - Content :
   
       ```
@@ -90,7 +90,7 @@ Access server port: 3000
               "numberSecret": "$2b$08$PZ.QIk/Y7puspzml/vqc..YJbrZUQJJCRt2nnDIxHFN4V.d4g9Yw6"
           },
           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTg1NzAyMTc2fQ.EmJxH7Riw2l6QyoR0XSHeyKgqiR5BDxIVHSFSdV-zQo"
-  }
+    }
       ```
 
   - **Error Response**
@@ -98,89 +98,89 @@ Access server port: 3000
     - Validation name
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "Please fill name"
+      "Please fill name"
         ```
 
         - Code : 400 Bad Request
-  
+
         - Content :
   
           ```
-      "please enter your name"
+        "please enter your name"
           ```
 
     - Validation password
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "Please fill password"
+      "Please fill password"
         ```
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "Please enter your password"
+      "Please enter your password"
         ```
 
     - Validation Email
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "Please fill email"
+      "Please fill email"
         ```
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "Please enter your email"
+      "Please enter your email"
         ```
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "format email wrong"
+      "format email wrong"
         ```
 
     - Validation Unique Email
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "email already exist"
+      "email already exist"
         ```
 
     - Validation Unique username
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
-    "username already exist"
+      "username already exist"
         ```
 
     - Validation min length password
 
       - Code : 400 Bad Request
-  
+
       - Content :
   
         ```
