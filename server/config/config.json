@@ -5,5 +5,12 @@
     "database": "dashboardAutentikasi",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "production": {
+    "username": "swyjrymwlyosvh",
+    "password": "6bc6c14ec1b245fda92610c5101d05c848539fdcc21a8d469a87a953ee7deb55",
+    "database": "d84avqkq31n5ka",
+    "host": "ec2-52-87-58-157.compute-1.amazonaws.com",
+    "dialect": "postgres"
   }
 }
